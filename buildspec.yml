@@ -18,8 +18,8 @@ phases:
       - echo "Running tests..."
       - echo "Building Docker image..."
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
-      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/my-repository:latest" .
-      - docker push "docker.io/nikhitha529/my-repository:latest"
+      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/my-repository:v1" .
+      - docker push "docker.io/nikhitha529/my-repository:v1"
   post_build:
     commands:
       - echo "Build completed successfully!"
