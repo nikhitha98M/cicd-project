@@ -1,6 +1,8 @@
 version: 0.0
 os: linux
-
+files:
+  - source: "./out"
+    destination: "/var/www/html"
 hooks:
   ApplicationStop:
     - location: scripts/stop_container.sh
@@ -10,8 +12,6 @@ hooks:
     - location: scripts/start_container.sh
       timeout: 300
       runas: root
-      ...
-files:
-  - source: "./out"
-    destination: "/var/www/html"
+  
+
 
